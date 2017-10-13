@@ -1,11 +1,9 @@
-algorithm-js
-=========
+/**
+ * Created by Cooper on 2017/10/13.
+ */
+const _ = require('lodash');
 
-<b>updating... (ง๑ •̀_•́)ง </b>
 
-Some useful algorithms of js, definitely depend on lodash.
-
-```js
 let m = {a: 2, b: 4, c: 1, d: 4},
     n = {a: 2, '1': 4, '2': 1, d: 4},
     o,
@@ -74,9 +72,4 @@ o = function () {
 // change an object in an array
 _.chain(o).find({order: "a123457"}).merge({price: 126}).value();
 // [ { order: 'a123456', price: 125, title: 'test' },{ order: 'a123457', price: 126 } ]
-```
 
-
-## Contributing
-
-...
