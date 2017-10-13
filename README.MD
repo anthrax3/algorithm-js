@@ -5,7 +5,9 @@ algorithm-js
 
 Some useful algorithms of js, definitely depend on lodash.
 
-```
+-------------------
+
+```js
 let m = {a: 2, b: 4, c: 1, d: 4},
     n = {a: 2, '1': 4, '2': 1, d: 4},
     o,
@@ -17,7 +19,7 @@ let m = {a: 2, b: 4, c: 1, d: 4},
 
 ```
 sort keys by values
-```
+```js
 o = _.fromPairs(_.sortBy(_.toPairs(m), [e => -e[1]]));
 // { b: 4, d: 4, a: 2, c: 1 }
 o = _.fromPairs(_.sortBy(_.toPairs(m), [e => e[1]]));
@@ -31,7 +33,7 @@ o = _.sortBy(_.map(n, (v, k) => {return {k, v}}), e => -e.v);
 
 add value if elements have same key
 
-```
+```js
 o = _.reduce((_.uniq(_.flattenDeep(_.map(p, e => _.keys(e))))), (s, v) => {
     s[v] = _.sumBy(p, o => o[v]);
     return s
@@ -40,19 +42,19 @@ o = _.reduce((_.uniq(_.flattenDeep(_.map(p, e => _.keys(e))))), (s, v) => {
 ```
 
 decrease
-```
+```js
 o = _.map(r, (e, i) => r[i + 1] - e).slice(0, -1);
 // [ 1, 2, 3 ]
 ```
 
 get last element
-```
+```js
 o = r.slice(-1)[0];
 // 7
 ```
 
 correlation coefficient
-```
+```js
 function correl(x, y) {
     xxs = _.sumBy(x, v => v * v);
     yys = _.sumBy(y, v => v * v);
@@ -67,7 +69,7 @@ o = correl(r, s);
 ```
 
 merge elements by specific key in two arrays
-```
+```js
 o = function () {
     let result = [];
     _.forEach(_.unionBy(t, u, "order"), e => {
@@ -80,7 +82,7 @@ o = function () {
 ```
 change an object in an array
 
-```
+```js
 _.chain(o).find({order: "a123457"}).merge({price: 126}).value();
 // [ { order: 'a123456', price: 125, title: 'test' },{ order: 'a123457', price: 126 } ]
 ```
